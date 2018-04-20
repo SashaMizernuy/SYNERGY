@@ -1,0 +1,22 @@
+
+
+sudo nano /etc/network/interfaces
+
+auto enp3s0f1
+iface enp3s0f1 inet dhcp
+
+После завершения настройки сохраните файл и перезапустите сеть:
+
+	$ sudo service networking restart
+
+Изначальные настройки
+
+auto lo
+iface lo inet loopback
+
+
+На сервере Запускаем synergy-сервер с отладкой: synergys -f -c .synergy.conf
+
+На сервере Запускаем второй терминал :ssh -R 24800:localhost:24800 sasha-VGN-SZ110
+
+На клиенте вводим:DISPLAY=:0 synergyc -f localhost
